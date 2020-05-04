@@ -45,24 +45,24 @@ console.log(datosPersonales.fechaNacimiento);
 
 // informacion de mi artista favorito
 
-let artistaFavorito = { 
-nombreArtista: "drake", 
-fechaNacimientoArtista: "24 de octubre 1986",
-edad: 34,
-canciones: ["hotling bling", "energy","started from the buttom"],
-nacionalidad: "americana",
-};
-
+let artistaFavorito = {};
+artistaFavorito.nombre = prompt("digite el nombre de su artista favorito");
+artistaFavorito.edad = prompt("introducir la edad de su artista favorito");
+artistaFavorito.nacionalidad = prompt("De que nacionalidad de tu artista");
+artistaFavorito.cancion1 = prompt("poner una primera cancion");
+artistaFavorito.cancion2 = prompt("poner otra cancion");
+artistaFavorito.fechaNacimiento = prompt("introducir la fecha de nacimineto de tu artista favorito");
 
 //imprimiendo los datos pedidos en la asignacion
 
 
 console.log(datosPersonales.nombrePersonal);
 console.log(datosPersonales.fechaNacimiento);
-console.log(artistaFavorito.canciones);
+console.log(artistaFavorito.cancion1);
 console.log(artistaFavorito.edad);
 console.log(artistaFavorito.nacionalidad);
-console.log(artistaFavorito.fechaNacimientoArtista);
+console.log(artistaFavorito.fechaNacimiento);
+console.log(datosPersonales.segundoPais);
 
 
 
