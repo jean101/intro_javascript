@@ -20,10 +20,10 @@ nombreFamilia.nombreHermana = prompt("Nombre de la hermana");
 //datos personales
 
 let datosPersonales = { };
-datosPersonales.nombreUsuarios = prompt("Nombre completo");
-datosPersonales.fechaNacimiento = prompt("fecha de nacimiento");
+datosPersonales.nombrePersonal = prompt("digite su nombre");
+datosPersonales.fechaNacimiento = String( prompt("fecha de nacimiento"));
 datosPersonales.lugarNacimiento = prompt("lugar de nacimiento");
-datosPersonales.edad = prompt("edad");
+datosPersonales.edad = Number.parseInt( prompt("edad"));
 datosPersonales.comida1 = prompt("ponga su comida favorita 1");
 datosPersonales.comida2 = prompt("ponga su comida favorita 2");
 datosPersonales.comida3 = prompt("ponga su comida favorita 3");
@@ -32,10 +32,18 @@ datosPersonales.segundoPais = prompt("paises 2");
 datosPersonales.tercerPais = prompt("paises 3");
 datosPersonales.cuartoPais = prompt("paises 4");
 datosPersonales.quintoPais = prompt("paises 5");
-datosPersonales.licenciaConducir = prompt("posees licencia de conducir aceptar=si cancelar=no");
+datosPersonales.licenciaConducir = Boolean( prompt("posees licencia de conducir aceptar=si cancelar=no"));
 datosPersonales.estasUniversidad = confirm("Estas en la universidad");
 
 
+//imprimiendo datos de prueba en la consola
+
+console.log("hola");
+console.log(datosPersonales.edad);
+console.log(datosPersonales.licenciaConducir);
+console.log(datosPersonales.fechaNacimiento);
+
+// informacion de mi artista favorito
 
 let artistaFavorito = { 
 nombreArtista: "drake", 
@@ -45,13 +53,16 @@ canciones: ["hotling bling", "energy","started from the buttom"],
 nacionalidad: "americana",
 };
 
-console.log(nombreUsuarios);
-console.log(fechaNacimiento);
-console.log(datosPersonales.quintoPais);
+
+//imprimiendo los datos pedidos en la asignacion
+
+
+console.log(datosPersonales.nombrePersonal);
+console.log(datosPersonales.fechaNacimiento);
+console.log(artistaFavorito.canciones);
 console.log(artistaFavorito.edad);
-console.log(artistaFavorito.nombreCompleto);
-console.log(artistaFavorito.fechaNacimientoArtista);
 console.log(artistaFavorito.nacionalidad);
+console.log(artistaFavorito.fechaNacimientoArtista);
 
 
 
