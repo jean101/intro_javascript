@@ -1,18 +1,25 @@
-let textoEscrito = document.querySelector("h1#jean");
-console.log(textoEscrito)
+//aqui selecccionamos las variables de html
 
-const h1 = document.querySelector("h1#jean");
+const parrafoInteresante = document.querySelector("h1#parrafoInteresante");
+console.log(parrafoInteresante);
 
-
-let div = document.querySelector("div.phone");
-console.log(div);
-
-const mañana = document.querySelector("div#mañana");
 
 const btnempezar = document.querySelector("button#empezar");
 console.log(btnempezar);
 
-btnempezar.addEventListener("click" ,function (){
+const divparrafoInteresante2 = document.querySelector("div#parrafoInteresante2");
+console.log(divparrafoInteresante2);
 
 
+//añadiendo eventos 
+
+btnempezar.addEventListener("dblclick" ,function (){
+
+ divparrafoInteresante2.style.display = "none";
+ parrafoInteresante.style.color = "red";
+ parrafoInteresante.style.fontStyle = "italic";
+ parrafoInteresante.innerHTML = "Haz hecho doble click!";
+
+
+ 
 });
