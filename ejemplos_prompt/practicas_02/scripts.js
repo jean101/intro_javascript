@@ -19,7 +19,5 @@ btnempezar.addEventListener("dblclick" ,function (){
  parrafoInteresante.style.color = "red";
  parrafoInteresante.style.fontStyle = "italic";
  parrafoInteresante.innerHTML = "Haz hecho doble click!";
-
-
  
 });
