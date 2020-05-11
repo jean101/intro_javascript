@@ -1,0 +1,9 @@
+h1.mediano  { 
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+img.pequeño  { 
+    width: 200px;
+}
