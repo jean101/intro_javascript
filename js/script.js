@@ -4,7 +4,7 @@ const nombre_usuario = document.querySelector("h2.nombre_usuario");
 const usuario = document.querySelector("p.usuario");
 
 
-let informacionUsuario =  `
+let userInformation = `
 {
     "login": "jean101",
     "id": 59874919,
@@ -39,8 +39,18 @@ let informacionUsuario =  `
     "updated_at": "2020-04-30T00:08:19Z"
   }
 `;
-let users = JSON.parse(informacionUsuario);
 
-imagen.src = "https://avatars1.githubusercontent.com/u/598749"
+console.log(userInformation);
 
-nombre_usuario.textContent = informacionUsuario.name
+ let jean = JSON.stringify(userInformation);
+ console.log(jean);
+
+
+imagen.src = "https://avatars1.githubusercontent.com/u/59874919?v=4"
+
+nombre_usuario.textcontent = userInformation.login;
+
+
+
+
+ 
