@@ -2,9 +2,35 @@ const imagen = document.querySelector("img.imagen_fondo");
 console.log(imagen);
 const nombre_usuario = document.querySelector("h2.nombre_usuario");
 const usuario = document.querySelector("p.usuario");
+const seguidores = document.querySelector("span.seguidores");
+const seguidos = document.querySelector("span.seguidos");
+const btnPresionar = document.querySelector("buttom#presionar");
+
+btnPresionar.addEventListener("click", function(){
+     obtenerDatosGithub()
+});
 
 
-let userInformation = `
+ async function obtenerDatosGithub( ){
+
+ let respuesta =  await fetch("https://api.github.com/users/jean101");
+ if (respuesta.ok) {
+
+   let comoEstas = await respuesta.json();
+   
+imagen.src = comoEstas.avatar_url;
+nombre_usuario.textContent = comoEstas.name;
+usuario.textContent = comoEstas.login;
+seguidores.textContent = comoEstas.followers;
+seguidos.textContent = comoEstas.following;
+
+ }
+
+}
+
+
+
+/*let userInformation = `
 {
     "login": "jean101",
     "id": 59874919,
@@ -24,13 +50,7 @@ let userInformation = `
     "received_events_url": "https://api.github.com/users/jean101/received_events",
     "type": "User",
     "site_admin": false,
-    "name": Jean carlos rodriguez,
-    "company": null,
-    "blog": "",
-    "location": null,
-    "email": null,
-    "hireable": null,
-    "bio": null,
+    "name": "jean carlos rodriguez",
     "public_repos": 2,
     "public_gists": 0,
     "followers": 2,
@@ -39,16 +59,15 @@ let userInformation = `
     "updated_at": "2020-04-30T00:08:19Z"
   }
 `;
-
-console.log(userInformation);
-
- let jean = JSON.stringify(userInformation);
- console.log(jean);
+*/
 
 
-imagen.src = "https://avatars1.githubusercontent.com/u/59874919?v=4"
+//let comoEstas = JSON.parse(userInformation);
 
-nombre_usuario.textcontent = userInformation.login;
+
+
+
+
 
 
 
