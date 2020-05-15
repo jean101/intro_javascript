@@ -4,9 +4,9 @@ const nombre_usuario = document.querySelector("h2.nombre_usuario");
 const usuario = document.querySelector("p.usuario");
 const seguidores = document.querySelector("span.seguidores");
 const seguidos = document.querySelector("span.seguidos");
-const btnPresionar = document.querySelector("buttom#presionar");
+const botonBuscar = document.querySelector("button#butonBuscar");
 
-btnPresionar.addEventListener("click", function(){
+botonBuscar.addEventListener("click", function(){
      obtenerDatosGithub()
 });
 
@@ -23,8 +23,7 @@ nombre_usuario.textContent = comoEstas.name;
 usuario.textContent = comoEstas.login;
 seguidores.textContent = comoEstas.followers;
 seguidos.textContent = comoEstas.following;
-
- }
+}
 
 }
 
