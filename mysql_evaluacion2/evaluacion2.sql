@@ -1,38 +1,31 @@
-create table publicadores (
-
-id int(11) unsigned PRIMARY KEY  AUTO_INCREMENT,
-nombre text not null,
-ciudad varchar(15),
-estado varchar(2)
+CREATE TABLE IF NOT EXISTS publicadores (
+    id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre TEXT NOT NULL,
+    ciudad VARCHAR(15) NOT NULL,
+    estado  VARCHAR(2) NOT NULL
 );
 
-
-
-
-create table tiendas(
-id int (11)  PRIMARY KEY  AUTO_INCREMENT,
-nombre text not null, 
-codigo_postal varchar(6),
-ciudad varchar(15),
-estado varchar(2)
-
+CREATE TABLE IF NOT EXISTS tiendas (
+    id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre TEXT NOT NULL,
+    codigo_postal VARCHAR(6) NOT NULL,
+    ciudad VARCHAR(15) NOT NULL,
+    estado VARCHAR(2) NOT NULL
 );
 
+INSERT INTO publicadores(nombre, ciudad, estado)
+VALUES ('New Age Books', 'Boston', 'MA'),
+('Binnet & Hardley', 'Washington', 'DC'),
+('Algodata Infosystems', 'Berkeley', 'CA');
 
-insert into publicadores (nombre , ciudad, estado)
-values ("New age books", "Boston" , "MA" ),
-("Binnet & hardley" , "Washington" , "DC" ),
-("Algodata infosystem" , "Berkley" , "CA");
-
-
-insert into tiendas (nombre , codigo_postal , ciudad , estado)
-values ("Barnums", "92789", "tustin", "CA" ),
-("News y brews" , "96745" , "Los Gatos" , "CA" ),
-("Quality laundry and books" , "98014" , "Remulade" , "WA" ),
-("Bookbeat" , "89076" , "portland" , "OR" ),
-("Eric the read books" , "98056" , "Seatle" , "WA" ),
-("Fricative bookshop" , "98056" , "fremont" , "CA" ),
-("Thoreau Reading Dicount chain" , "17765" , "Concord" , "MA" );
+INSERT INTO tiendas(nombre, codigo_postal, ciudad, estado)
+VALUES ('Barnums', '92789', 'Tustin', 'CA'),
+('News & Brews', '96745', 'Los Gatos', 'CA'),
+('Quality Laundry and Books', '98014', 'Remulade', 'WA'),
+('Bookbeat', '89076', 'Portland', 'OR'),
+('Eric the Read Books', '98056', 'Seattle', 'WA'),
+('Fricative Bookshop', '90019', 'Fremont', 'CA'),
+('Thoreau Reading Discount Chain', '1776', 'Concord', 'MA');
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,16 +37,16 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE TABLE  libros(
-"id" int(11) PRIMARY KEY AUTO_INCREMENT,
-"codigo" varchar(6) ,
-"titulo" text ,
-"categoria" varchar(12),
-"precio" decimal(10),
-"cantidad_vendida" int(9),
-);
-
-
+CREATE TABLE IF NOT EXISTS `libros` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(6) NOT NULL,
+  `titulo` text NOT NULL,
+  `categoria` varchar(12) NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `cantidad_vendida` int(9) NOT NULL,
+  `id_publicador` int(11) UNSIGNED NOT NULL,
+  FOREIGN KEY (id_publicador) REFERENCES publicadores(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `libros` (`id`, `codigo`, `titulo`, `categoria`, `precio`, `cantidad_vendida`, `id_publicador`) VALUES
 (1, 'BU1032', 'The Busy Executive Database Guide', 'business', '20', 5000, 3),
@@ -82,10 +75,10 @@ ALTER TABLE `libros`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 
 
